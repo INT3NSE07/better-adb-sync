@@ -65,7 +65,9 @@ class AndroidFileSystem(FileSystem):
         ["(", "\\("],
         [")", "\\)"],
         ["!", "\\!"],
-        ["&", "\\&"]
+        ["&", "\\&"],
+        ["$", "\\$"],
+        [";", "\\;"]
     ]
 
     def escapePath(self, path: str) -> str:

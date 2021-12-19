@@ -40,7 +40,7 @@ class FileSystem():
         elif stat.S_ISDIR(tree_root_stat.st_mode):
             tree = {".": (60 * (int(tree_root_stat.st_atime) // 60), 60 * (int(tree_root_stat.st_mtime) // 60))}
             for filename, statObject_child, in self.lstat_inDir(tree_root):
-                if filename in [".", ".."]:
+                if filename in [".", "..", ".thumbnails"]:
                     continue
                 tree[filename] = self._getFilesTree(
                     self.joinPaths(tree_root, filename),
